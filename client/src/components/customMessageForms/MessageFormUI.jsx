@@ -20,7 +20,7 @@ function MessageFormUI({
       {preview && (
         <div className="message-form-preview">
           <img
-            className="message-form-preview=image"
+            className="message-form-preview-image"
             src={preview}
             onLoad={() => URL.revokeObjectUrl(preview)}
             alt="message-form-preview"

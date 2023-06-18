@@ -16,7 +16,7 @@ function Ai({ props, activeChat }) {
     const form = {
       attachments: at,
       created: date,
-      senderusername: props.username,
+      sender_username: props.username,
       text: message,
       activeChatId: activeChat.id,
     };
