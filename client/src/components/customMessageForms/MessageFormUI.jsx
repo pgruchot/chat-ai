@@ -6,7 +6,14 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 
-function MessageFormUI({ setAttachment, message, handleChange, handleSubmit }) {
+function MessageFormUI({
+  setAttachment,
+  message,
+  handleChange,
+  handleSubmit,
+  appendText,
+  handleKeyDown,
+}) {
   const [preview, setPreview] = useState("");
   return (
     <div className="message-form-container">
@@ -34,8 +41,17 @@ function MessageFormUI({ setAttachment, message, handleChange, handleSubmit }) {
             type="text"
             value={message}
             onChange={handleChange}
+            onKeyDown={handleKeyDown}
             placeholder="Send a message..."
           />
+          {appendText && (
+            <input
+              className="message-form-assist"
+              type="text"
+              disabled="disabled"
+              value={`${message} ${appendText}`}
+            />
+          )}
         </div>
         <div className="message-form-icons">
           <Dropzone
